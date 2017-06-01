@@ -8,8 +8,14 @@ var octicons = require('octicons')
 
 var map = L.map('map', {
   center: [48.5, -123.0],
-  zoom: 10
+  zoom: 10,
+  zoomControl: false
 })
+
+var zoomControl = L.control.zoom({
+  position: 'topright'
+})
+zoomControl.addTo(map)
 
 var basemap = Esri.tiledMapLayer({
   url: 'https://sjcgis.org/arcgis/rest/services/Basemaps/General_Basemap_WM/MapServer'
