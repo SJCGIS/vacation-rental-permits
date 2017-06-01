@@ -1,0 +1,24 @@
+{
+  "name": "vacation-rentals",
+  "version": "0.1.0",
+  "description": "This map shows the location of parcels as assigned on vacation rental permits since 1990.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo app.js:bundle.js",
+    "build": "browserify app.js -t yo-yoify | uglifyjs -mc > bundle.js"
+  },
+  "author": "Nick Peihl <nickpeihl@gmail.com> (http://npeihl.com/)",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bel": "^5.0.0",
+    "esri-leaflet": "^2.0.8",
+    "leaflet": "^1.0.3",
+    "leaflet-sidebar-v2": "^1.0.0",
+    "octicons": "^5.0.1",
+    "run-series": "^1.1.4"
+  },
+  "devDependencies": {
+    "yo-yoify": "^3.7.3"
+  }
+}
