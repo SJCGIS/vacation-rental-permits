@@ -8,7 +8,7 @@
     "start": "budo app.js:bundle.js",
     "build": "browserify app.js -t yo-yoify | uglifyjs -mc > bundle.js"
   },
-  "author": "Nick Peihl <nickpeihl@gmail.com> (http://npeihl.com/)",
+  "author": "Nick Peihl <sjcgis@sanjuanco.com> (http://sjcgis.org/)",
   "license": "Apache-2.0",
   "dependencies": {
     "bel": "^5.0.0",
