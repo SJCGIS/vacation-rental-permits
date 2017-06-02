@@ -1,6 +1,6 @@
 {
   "name": "vacation-rental-permits",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This map shows the location of parcels as assigned on vacation rental permits since 1990.",
   "main": "app.js",
   "scripts": {
