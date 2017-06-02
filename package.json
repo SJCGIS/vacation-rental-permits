@@ -9,14 +9,15 @@
     "build": "browserify app.js -t yo-yoify | uglifyjs -mc > bundle.js"
   },
   "author": "Nick Peihl <sjcgis@sanjuanco.com> (http://sjcgis.org/)",
+  "repository": "github:sjcgis/vacation-rental-permits",
   "license": "Apache-2.0",
   "dependencies": {
     "bel": "^5.0.0",
     "esri-leaflet": "^2.0.8",
+    "esri-leaflet-renderers": "^2.0.5",
     "leaflet": "^1.0.3",
     "leaflet-sidebar-v2": "^1.0.0",
-    "octicons": "^5.0.1",
-    "run-series": "^1.1.4"
+    "octicons": "^5.0.1"
   },
   "devDependencies": {
     "yo-yoify": "^3.7.3"
