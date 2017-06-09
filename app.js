@@ -38,6 +38,9 @@ vacationRentals.metadata(function (err, data) {
   }
 })
 
+/**
+ * Create the Home panel for the sidebar from the layer description
+*/
 function createHomePanel (data) {
   var el = bel`<div class="sidebar-pane">
     <h1 class="sidebar-header f5">Vacation Rental Permits
@@ -45,11 +48,20 @@ function createHomePanel (data) {
     ${data.description.split(/\r?\n/g).map(function (line) {
       return bel`<p class="f5 measure lh-copy">${line}</p>`
     })}
+    <p class="f5 measure lh-copy">
+      The entire Vacation Rental Permits dataset can be downloaded from the <a href=
+      "http://data.sjcgis.org/datasets?q=vacation+rental+permits&sort_by=relevance">
+      San Juan County Open Data Website</a>.
+    </p>
+    <p class="f5 measure lh-copy">
+      Vacation Rental Permits is an <a href=
+      "https://github.com/sjcgis/vacation-rental-permits">Open Source Website</a>.
+    </p>
   </div>`
   sidebar.addPanel({
     id: 'home',
     tab: octicons['home'].toSVG({
-      'aria-label': 'Toggle Home pane',
+      'aria-label': 'Home pane',
       'width': '20',
       'height': '20',
       'fill': 'currentcolor',
@@ -61,12 +73,15 @@ function createHomePanel (data) {
   sidebar.open('home')
 }
 
+/**
+ * Create the legend panel for the sidebar using data from the layer
+*/
 function createLegendPanel (data) {
   var el = createLegend(data)
   sidebar.addPanel({
     id: 'legend',
     tab: octicons['list-unordered'].toSVG({
-      'aria-label': 'Toggle Legend pane',
+      'aria-label': 'Legend pane',
       'width': '20',
       'height': '20',
       'fill': 'currentcolor',
@@ -77,6 +92,10 @@ function createLegendPanel (data) {
   })
 }
 
+/**
+ * Create popup windows for the layer and format them by the field
+ * type
+*/
 function createPopups (data) {
   var fieldInfo = data.fields.reduce(function (acc, cur, i) {
     acc[cur['name']] = cur
@@ -97,6 +116,11 @@ function createPopups (data) {
     return el
   })
 
+  /**
+   * Check the field type and format it for the popup. In this case, only the
+   * date type needs special formatting. Geometry, Blobs, and Rasters should
+   * return nothing and everything else should be returned as is.
+  */
   function format (k, v) {
     switch (fieldInfo[k]['type']) {
       case 'esriFieldTypeSmallInteger':
@@ -119,8 +143,9 @@ function createPopups (data) {
   }
 }
 
-
-
+/**
+ * Create the HTML for the legend
+*/
 function createLegend (data) {
   var el = bel`<div class="sidebar-pane">
     <h1 class="sidebar-header f5">Legend
@@ -130,6 +155,9 @@ function createLegend (data) {
   return el
 }
 
+/**
+ * Create a close button for the sidebar
+*/
 function sidebarClose () {
   var el = bel`<span class="sidebar-close"></span>`
   el.innerHTML = octicons['x'].toSVG({
@@ -143,6 +171,9 @@ function sidebarClose () {
   return el
 }
 
+/**
+ * Create a group legend for the specified layer
+*/
 function createLayerLegend (layer) {
   return bel`<div>
     <h2 class="f5 lh-copy">${layer.name}</h2>
@@ -152,9 +183,12 @@ function createLayerLegend (layer) {
   </div>`
 }
 
+/**
+ * Create a legend patch and label for the specified item
+*/
 function createLegendItem (item) {
   return bel`<li class="flex items-center lh-copy pa3 ph0-l bb b--black-10">
-    <img class="pr2" src="data:${item.symbol.contentType};base64,${item.symbol.imageData}" />
+    <img class="pr2" alt="${item.label} legend item" src="data:${item.symbol.contentType};base64,${item.symbol.imageData}" />
     <span class="f6 db black-80">${item.label}</span>
   </li>`
 }
