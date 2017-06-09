@@ -4,7 +4,7 @@ var Esri = require('esri-leaflet')
 require('esri-leaflet-renderers')
 require('leaflet-sidebar-v2')
 var bel = require('bel')
-var octicons = require('octicons')
+var octicons = require('@nickpeihl/octicons')
 
 var map = L.map('map', {
   center: [48.5, -123.0],
