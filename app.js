@@ -46,16 +46,18 @@ function createHomePanel (data) {
     <h1 class="sidebar-header f5">Vacation Rental Permits
       ${sidebarClose()}</h1>
     ${data.description.split(/\r?\n/g).map(function (line) {
-      return bel`<p class="f5 measure lh-copy">${line}</p>`
+      return bel`<p class="f6 measure lh-copy">${line}</p>`
     })}
-    <p class="f5 measure lh-copy">
+    <p class="f6 measure lh-copy">
       The entire Vacation Rental Permits dataset can be downloaded from the <a href=
       "http://data.sjcgis.org/datasets?q=vacation+rental+permits&sort_by=relevance">
       San Juan County Open Data Website</a>.
     </p>
-    <p class="f5 measure lh-copy">
+    <p class="f6 measure lh-copy">
       Vacation Rental Permits is an <a href=
       "https://github.com/sjcgis/vacation-rental-permits">Open Source Website</a>.
+      Questions and comments should be sent to <a href="mailto:sjcgis@sanjuanco.com">
+      sjcgis@sanjuanco.com</a>.
     </p>
   </div>`
   sidebar.addPanel({
