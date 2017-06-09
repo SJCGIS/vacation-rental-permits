@@ -12,12 +12,12 @@
   "repository": "github:sjcgis/vacation-rental-permits",
   "license": "Apache-2.0",
   "dependencies": {
+    "@nickpeihl/octicons": "^5.0.3",
     "bel": "^5.0.0",
     "esri-leaflet": "^2.0.8",
     "esri-leaflet-renderers": "^2.0.5",
     "leaflet": "^1.0.3",
-    "leaflet-sidebar-v2": "^1.0.0",
-    "octicons": "^5.0.1"
+    "leaflet-sidebar-v2": "^1.0.0"
   },
   "devDependencies": {
     "yo-yoify": "^3.7.3"
