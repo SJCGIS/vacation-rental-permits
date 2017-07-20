@@ -20,6 +20,7 @@
     "leaflet-sidebar-v2": "^1.0.0"
   },
   "devDependencies": {
+    "sw-precache": "^5.2.0",
     "yo-yoify": "^3.7.3"
   }
 }

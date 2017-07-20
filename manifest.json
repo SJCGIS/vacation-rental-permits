@@ -1,0 +1,39 @@
+{
+  "short_name": "VR Permits",
+  "name": "San Juan County Vacation Rental Permits",
+  "start_url": "index.html?utm_source=web_app_manifest",
+  "display": "standalone",
+  "background_color": "#F6F5F3",
+  "theme_color": "#10693A",
+  "description": "This map shows the location of parcels as assigned on vacation rental permits since 1990.",
+  "lang": "en-US",
+  "icons": [{
+    "src": "img/launcher-icon-48.png",
+    "type": "image/png",
+    "sizes": "48x48"
+  },{
+    "src": "img/launcher-icon-72.png",
+    "type": "image/png",
+    "sizes": "72x72"
+  },{
+    "src": "img/launcher-icon-96.png",
+    "type": "image/png",
+    "sizes": "96x96"
+  },{
+    "src": "img/launcher-icon-144.png",
+    "type": "image/png",
+    "sizes": "144x144"
+  },{
+    "src": "img/launcher-icon-168.png",
+    "type": "image/png",
+    "sizes": "168x168"
+  },{
+    "src": "img/launcher-icon-192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  },{
+    "src": "img/launcher-icon-512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }]
+}

@@ -2,8 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="theme-color" content="#10693A" />
         <title>Vacation Rental Permits - San Juan County, WA</title>
+        <link rel="manifest" href="/manifest.json" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet-sidebar-v2@1.0.0/css/leaflet-sidebar.min.css" />
         <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
@@ -14,7 +16,15 @@
 
     </head>
     <body>
-        <div id="map" class="sidebar-map"></div>
-        <script src="bundle.js"></script>
+        <div id="map" class="sidebar-map">
+            <noscript class="noscript">
+            <div class="pa4">
+                <h1 class="f3">Error: JavaScript not enabled</h1>
+                <p class="lh-copy">This page requires JavaScript. Here are the <a href="http://www.enable-javascript.com/" target="_blank">instructions how to enable JavaScript in your web browser</a>.</p>
+            </div>
+        </noscript>
+        </div>
+        <script src="service-worker-registration.js"></script>
+        <script async="true" src="bundle.js"></script>
     </body>
 </html>

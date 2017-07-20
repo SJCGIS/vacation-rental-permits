@@ -28,7 +28,9 @@ var vacationRentals = Esri.featureLayer({
 
 var sidebar = L.control.sidebar('sidebar').addTo(map)
 
-//Create panes in order of display. e.g. home, legend, etc
+/**
+ * Create panes in order of display. e.g. home, legend, etc
+*/
 vacationRentals.metadata(function (err, data) {
   if (err) console.error(err)
   else {
