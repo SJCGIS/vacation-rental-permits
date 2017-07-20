@@ -1,20 +1,12 @@
-var DEBUG = true
+var DEBUG = false
 
 module.exports = {
   staticFileGlobs: [
     'index.html',
-    'bundle.js'
+    'bundle.js',
+    'img/**.*'
   ],
   runtimeCaching: [{
-    urlPattern: new RegExp('^https://unpkg\.com/'),
-    handler: 'cacheFirst',
-    options: {
-      debug: DEBUG,
-      cache: {
-        name: 'libs-cache'
-      }
-    }
-  }, {
     urlPattern: new RegExp('^https://sjcgis\.org/arcgis/rest/services/Basemaps/General_Basemap_WM/MapServer/tile/10/', 'i'),
     handler: 'fastest',
     options: {

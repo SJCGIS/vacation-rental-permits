@@ -5,19 +5,27 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "budo app.js:bundle.js",
-    "build": "browserify app.js -t yo-yoify | uglifyjs -mc > bundle.js"
+    "start": "npm run sw-precache && budo app.js:bundle.js",
+    "sw-precache": "sw-precache --config=config/sw-precache-config.js",
+    "build": "npm run sw-precache && browserify app.js -g yo-yoify | uglifyjs -mc > bundle.js"
   },
   "author": "Nick Peihl <sjcgis@sanjuanco.com> (http://sjcgis.org/)",
   "repository": "github:sjcgis/vacation-rental-permits",
   "license": "Apache-2.0",
+  "browserify": {
+    "transform": [
+      "sheetify"
+    ]
+  },
   "dependencies": {
     "@nickpeihl/octicons": "^5.0.3",
     "bel": "^5.0.0",
     "esri-leaflet": "^2.0.8",
     "esri-leaflet-renderers": "^2.0.5",
     "leaflet": "^1.0.3",
-    "leaflet-sidebar-v2": "^1.0.0"
+    "leaflet-sidebar-v2": "^1.0.0",
+    "sheetify": "^6.1.0",
+    "tachyons": "^4.7.4"
   },
   "devDependencies": {
     "sw-precache": "^5.2.0",

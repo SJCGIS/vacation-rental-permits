@@ -5,6 +5,11 @@ require('esri-leaflet-renderers')
 require('leaflet-sidebar-v2')
 var bel = require('bel')
 var octicons = require('@nickpeihl/octicons')
+var css = require('sheetify')
+
+css('leaflet')
+css('leaflet-sidebar-v2')
+css('tachyons')
 
 var map = L.map('map', {
   center: [48.5, -123.0],
@@ -18,7 +23,8 @@ var zoomControl = L.control.zoom({
 zoomControl.addTo(map)
 
 var basemap = Esri.tiledMapLayer({
-  url: 'https://sjcgis.org/arcgis/rest/services/Basemaps/General_Basemap_WM/MapServer'
+  url: 'https://sjcgis.org/arcgis/rest/services/Basemaps/General_Basemap_WM/MapServer',
+  errorTileUrl: './img/missing.png'
 }).addTo(map)
 
 var vacationRentals = Esri.featureLayer({
