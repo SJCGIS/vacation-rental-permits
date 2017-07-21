@@ -114,6 +114,9 @@ function createPopups (data) {
   vacationRentals.bindPopup(function (layer) {
     var props = layer.feature.properties
     var el = bel`<ul class="list pl0">${Object.keys(props)
+    .filter(function (key) {
+      return key !== 'OBJECTID'
+    })
     .map(function (key) {
       return bel`<li class="flex items-center lh-copy measure pa1 ph0-l bb b--black-10">
       <div class="db f7 f6-ns black-80">
@@ -122,7 +125,8 @@ function createPopups (data) {
       </div>
       </li>`
     })
-  }</ul>`
+    }
+    </ul>`
     return el
   })
 
